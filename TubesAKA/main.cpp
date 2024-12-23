@@ -2,7 +2,7 @@
 using namespace std;
 
 // Fungsi rekursif untuk menghitung peluang dadu sama
-double peluang_dadu_rekursif(int n, int dadu1 = 1, int dadu2 = 1, int hasil = 0) {
+double peluang_dadu_sama_rekursif(int n, int dadu1 = 1, int dadu2 = 1, int hasil = 0) {
     // Basis kasus: jika kedua dadu mencapai angka n
     if (dadu1 > n) {
         // Total kombinasi yang mungkin adalah n * n
@@ -19,16 +19,10 @@ double peluang_dadu_rekursif(int n, int dadu1 = 1, int dadu2 = 1, int hasil = 0)
 
     // Jika dadu2 mencapai nilai maksimum n, lanjutkan ke dadu1 berikutnya dan reset dadu2 ke 1
     if (dadu2 < n) {
-        return peluang_dadu_rekursif(n, dadu1, dadu2 + 1, hasil);
+        return peluang_dadu_sama_rekursif(n, dadu1, dadu2 + 1, hasil);
     } else {
-        return peluang_dadu_rekursif(n, dadu1 + 1, 1, hasil);
+        return peluang_dadu_sama_rekursif(n, dadu1 + 1, 1, hasil);
     }
-
-    // Total kombinasi yang mungkin adalah n * n
-    int total_kombinasi = n * n;
-
-    // Peluangnya adalah kombinasi_sama / total_kombinasi
-    return static_cast<double> (hasil) / total_kombinasi;
 }
 
 // Fungsi iteratif untuk menghitung peluang dadu sama
@@ -61,6 +55,10 @@ int main() {
         cout << "1. Peluang dadu sama (rekursif)\n";
         cout << "2. Peluang dadu sama (iteratif)\n";
         cout << "3. Keluar\n";
+        cout << "-------------------------------------------- \n";
+        cout << "by: \n";
+        cout << "Riyanda Wiesya Bella (103022300001) \n";
+        cout << "Shinta Alya Aulya Ningrum (103022300049) \n";
         cout << "Masukkan pilihan: ";
         cin >> pilihan;
 
@@ -70,7 +68,7 @@ int main() {
                 cout << "Masukkan jumlah sisi dadu: ";
                 cin >> n;
                 cout << "Peluang muncul dadu angka sama (rekursif): "
-                     << peluang_dadu_rekursif(n) << endl;
+                     << peluang_dadu_sama_rekursif(n) << endl;
                 cout << endl;
                 break;
 
