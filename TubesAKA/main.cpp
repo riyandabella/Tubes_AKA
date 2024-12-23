@@ -50,15 +50,17 @@ double peluang_dadu_sama_iteratif(int n) {
 int main() {
     int n, pilihan;
 
+    cout << "-------------------------------------------- \n";
+    cout << "Anggota Kelompok: \n";
+    cout << "Riyanda Wiesya Bella (103022300001) \n";
+    cout << "Shinta Alya Aulya Ningrum (103022300049) \n\n";
+
     while (true) {
         cout << "-----------------Pilih menu----------------- \n";
         cout << "1. Peluang dadu sama (rekursif)\n";
         cout << "2. Peluang dadu sama (iteratif)\n";
         cout << "3. Keluar\n";
         cout << "-------------------------------------------- \n";
-        cout << "by: \n";
-        cout << "Riyanda Wiesya Bella (103022300001) \n";
-        cout << "Shinta Alya Aulya Ningrum (103022300049) \n";
         cout << "Masukkan pilihan: ";
         cin >> pilihan;
 
